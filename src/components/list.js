@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getListData } from '../actions'; 
+import NavButton from './nav_button';
 
 class List extends Component {
 
@@ -20,7 +21,7 @@ componentDidMount(){
             <div>
                 <h1 className ="center">to do list</h1>
                 <p className="center grey-text">now with redux</p>
-
+                <NavButton to="/add-item" text="Add Item"/>
                 <ul className="collection">
                     {listElements}
                 </ul>
