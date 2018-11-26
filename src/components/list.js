@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getListData } from '../actions'; 
 import NavButton from './nav_button';
 
@@ -11,10 +12,14 @@ componentDidMount(){
 }
 
     render(){
-        
+        const linkStyle={display:'block', height: '100%'};
 
         const listElements = this.props.todos.map( item => {
-            return <li key={item._id} className="collection-item">{item.title}</li>
+            return (
+            <li key={item._id} className="collection-item">
+                <Link style={linkStyle} to={`/item/${item._id}`}>{item.title}</Link>
+            </li>
+            )
         })
 
         return (

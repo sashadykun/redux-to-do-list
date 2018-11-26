@@ -23,3 +23,14 @@ export function getListData(){
         payload: resp
     }
 }
+
+export function getSingleItem(id){
+    const resp = axios.get(`${BASE_URL}/${id + API_KEY}`);
+
+    return {
+        type: types.GET_SINGLE_ITEM,
+        payload: resp
+    }
+
+
+}
